@@ -1,0 +1,26 @@
+2020-08-23 17:36:50.7477 INFO Returned all owners from database.
+2020-08-23 17:39:30.8631 INFO Returned all meetings from database.
+2020-08-23 17:41:14.0377 INFO Returned all meetings from database.
+2020-08-23 19:53:36.0063 INFO Returned meeting with id: 1
+2020-08-23 19:53:41.3047 INFO Returned meeting with id: 2
+2020-08-23 20:02:50.7528 INFO Returned all meetings from database.
+2020-08-23 20:03:36.5143 INFO Returned all meetings from database.
+2020-08-23 20:14:16.1984 INFO Returned all meetings from database.
+2020-08-23 20:16:47.4473 INFO Returned meeting with id: 1
+2020-08-23 20:16:55.3152 INFO Returned meeting with id: 2
+2020-08-23 20:19:04.3751 INFO Returned all meetings from database.
+2020-08-23 20:25:05.8525 ERROR Something went wrong inside GetAllOwners action: Data is Null. This method or property cannot be called on Null values.
+2020-08-23 20:25:30.4788 ERROR Something went wrong inside GetAllOwners action: Data is Null. This method or property cannot be called on Null values.
+2020-08-23 20:26:04.1685 INFO Returned all meetings from database.
+2020-08-23 20:36:31.1789 ERROR Something went wrong inside CreateMeeting action: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Object -> Meetings
+System.Object -> Entities.Models.Meetings
+2020-08-23 20:57:36.3644 ERROR Something went wrong inside UpdateMeeting action: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+MeetingsForUpdateDto -> Meetings
+Entities.DataTransferObjects.MeetingsForUpdateDto -> Entities.Models.Meetings
+2020-08-23 22:15:53.6665 ERROR Something went wrong inside GetAllMeetings action: The entity type 'MeetingAttendees' requires a primary key to be defined. If you intended to use a keyless entity type call 'HasNoKey()'.
+2020-08-23 23:58:47.4155 INFO Returned all meetings from database.

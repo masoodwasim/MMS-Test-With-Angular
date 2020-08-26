@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Meetings</h1>
+
+
+<p *ngIf="!meetinglist"><em>Loading...</em></p>
+
+<div>
+  <button type="button" [routerLink]="['/meeting-edit']" class="btn btn-success">Add Meeting</button>
+</div>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="meetinglist">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Subject</th>
+      <th>Agenda</th>
+      <th>DOM</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let meeting of meetinglist">
+      <td>{{ meeting.id }}</td>
+      <td>{{ meeting.subject }}</td>
+      <td>{{ meeting.agenda }}</td>
+      <td>{{ meeting.dateOfMeeting | customDateFormat|date :'short'}}</td>
+      <td><button class="btn btn-primary" (click)="editMeeting(meeting)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
