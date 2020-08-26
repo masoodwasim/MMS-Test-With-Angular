@@ -17,6 +17,7 @@ import { AuthService } from './auth/auth.service';
 import { MeetingEditComponent } from './meetings/meeting-edit/meeting-edit.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { DatePipe } from '@angular/common';
+ 
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DatePipe } from '@angular/common';
     MeetingsComponent,
     LoginComponent,
     MeetingEditComponent
+    
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -64,9 +64,6 @@ export class  MeetingsModel {
 }
 
 export class AttendeesModel {
-  //id: number;
-  //firstName: string;
-  //lastName: string;
-  //isActive: boolean;
+  id: number;
   fullName: string;
 }

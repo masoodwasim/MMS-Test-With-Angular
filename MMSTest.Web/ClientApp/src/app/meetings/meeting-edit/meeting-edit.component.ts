@@ -24,7 +24,6 @@ export class MeetingEditComponent implements OnInit {
   txtSubject: string;
   txtDOM: string;
   txtAgenda: string;
-
   meetingaddform: FormGroup
   constructor(public fb: FormBuilder, private router: Router, public crudService: MeetingsService, private route: ActivatedRoute, private datePipe: DatePipe) {
     this.getAllMeetings();
@@ -56,13 +55,23 @@ export class MeetingEditComponent implements OnInit {
     this.heroes$ = this.route
       .queryParams
       .subscribe(params => {
-        this.txtSubject = this.route.snapshot.queryParamMap.get('subject');
-        var attendees = this.route.snapshot.queryParamMap.get('attendees');
-        this.selectedItems = attendees.split(";");
-        this.txtAgenda = this.route.snapshot.queryParamMap.get('agenda');
-        let txtDOM1 = this.route.snapshot.queryParamMap.get('dateOfMeeting');
-        this.txtDOM = this.datePipe.transform(txtDOM1, 'dd-MM-yyyy');
-        console.log(this.txtDOM);
+        var IdParam = this.route.snapshot.queryParamMap.get('id');
+        console.log(IdParam);
+        var Id: number = +IdParam;
+        if (Id > 0) {
+          this.txtSubject = this.route.snapshot.queryParamMap.get('subject');
+          var attendees = this.route.snapshot.queryParamMap.get('attendees');
+          this.selectedItems = attendees.split(";");
+          this.txtAgenda = this.route.snapshot.queryParamMap.get('agenda');
+          let txtDOM1 = this.route.snapshot.queryParamMap.get('dateOfMeeting');
+          this.txtDOM = this.datePipe.transform(txtDOM1, 'yyyy-MM-dd');
+          console.log(this.txtDOM);
+        }
+        else {
+          this.txtSubject ="";
+          var attendees = ""; 
+          this.txtAgenda = ""; 
+        }
       });
 
   }

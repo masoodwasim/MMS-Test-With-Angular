@@ -11,7 +11,7 @@
           </div>
           <p></p>
           <label>Date of Meeting</label>
-          <input type="date" formControlName="dateOfMeeting" [(ngModel)]="txtDOM" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfMeeting.errors }" />
+          <input type="date" formControlName="dateOfMeeting" [value]="txtDOM" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfMeeting.errors }" />
           <div *ngIf="submitted && f.dateOfMeeting.errors" class="invalid-feedback">
             <div *ngIf="f.dateOfMeeting.errors.required">Date of meeting is required</div>
           </div>
