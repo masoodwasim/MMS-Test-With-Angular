@@ -19,7 +19,7 @@ namespace Entities.DataTransferObjects
         public string Agenda { get; set; }
 
         [Required(ErrorMessage = "Attendees is required")]
-        public string Attendees { get; set; }
+        public List<AttendeesListDto> Attendees { get; set; }
 
         [Required(ErrorMessage = "Date of meeting is required")]
         public DateTime DateOfMeeting { get; set; }

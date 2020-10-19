@@ -1,0 +1,2 @@
+2020-09-01 20:54:29.4599 INFO Returned all attendees from database.
+2020-09-01 20:54:29.4862 INFO Returned meeting with id: 14

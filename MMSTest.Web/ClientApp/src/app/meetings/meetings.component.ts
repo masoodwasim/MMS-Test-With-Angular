@@ -22,7 +22,7 @@ export class MeetingsComponent implements OnInit {
 
   }
   editMeeting(meeting: any) {
-    this.router.navigate(['/meeting-edit'], { queryParams: meeting });
+    this.router.navigate(['/meeting-edit'], { queryParams: { id: meeting.id } });
     meeting.editable = !meeting.editable;
     console.log(meeting);
   }

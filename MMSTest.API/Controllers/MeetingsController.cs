@@ -47,7 +47,7 @@ namespace MMSTest.API.Controllers
         public async Task<IActionResult> GetMeetingById(int id)
         {
             try
-            {
+             {
                 var meeting = await _repository.Meetings.GetMeetingByIdAsync(id);
                 if (meeting == null)
                 {
@@ -156,7 +156,10 @@ namespace MMSTest.API.Controllers
                 }
 
                 _mapper.Map(meeting, meetingEntity);
-
+                var attendees = new List<string>();
+                foreach (var item in meeting.Attendees)
+                    attendees.Add(item.FullName);
+                meetingEntity.Attendees = String.Join(";", attendees);
                 _repository.Meetings.UpdateMeeting(meetingEntity);
                 await _repository.SaveAsync();
 

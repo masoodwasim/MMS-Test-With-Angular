@@ -24,8 +24,12 @@ export class MeetingsService {
     return this.httpobj.get<MeetingsModel>(this.appURL + 'meetings');
 
   }
-  getAllAttendees(): Observable<AttendeesModel> {
-    return this.httpobj.get<AttendeesModel>(this.appURL + 'attendees');
+  getMeetingDetails(Id): Observable<MeetingsModel> {
+    return this.httpobj.get<MeetingsModel>(this.appURL + 'meetings/' + Id);
+
+  }
+  getAllAttendees(): Observable<AttendeesModel[]> {
+    return this.httpobj.get<AttendeesModel[]>(this.appURL + 'attendees');
 
   }
   //getAttendees(): Observable<AttendeesModel[]> {
@@ -38,6 +42,11 @@ export class MeetingsService {
     console.log(JSON.stringify(meeting));
 
     return this.httpobj.post<MeetingsModel>(this.appURL + 'meetings', JSON.stringify(meeting), this.httpOptions).pipe()
+  }
+  update(meeting): Observable<MeetingsModel> {
+    console.log(JSON.stringify(meeting));
+
+    return this.httpobj.put<MeetingsModel>(this.appURL + 'meetings', JSON.stringify(meeting), this.httpOptions).pipe()
   }
 
   //private handleError(error: Response | any) {

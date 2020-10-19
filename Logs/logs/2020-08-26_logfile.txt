@@ -201,3 +201,17 @@
 2020-08-26 20:02:34.8710 INFO Returned all meetings from database.
 2020-08-26 20:02:34.9883 INFO Returned all attendees from database.
 2020-08-26 20:02:51.4577 INFO Returned all meetings from database.
+2020-08-26 20:30:51.9469 INFO Returned all meetings from database.
+2020-08-26 20:50:34.0033 INFO Returned all meetings from database.
+2020-08-26 20:50:37.4900 INFO Returned all meetings from database.
+2020-08-26 20:50:37.6620 INFO Returned all attendees from database.
+2020-08-26 20:54:04.4450 INFO Returned all meetings from database.
+2020-08-26 20:54:04.7411 INFO Returned all attendees from database.
+2020-08-26 20:54:10.3906 INFO Returned meeting with id: 7
+2020-08-26 20:56:53.3677 INFO Returned all attendees from database.
+2020-08-26 20:56:57.9996 INFO Returned all meetings from database.
+2020-08-26 20:57:00.0959 INFO Returned all attendees from database.
+2020-08-26 20:57:04.0710 INFO Returned meeting with id: 7
+2020-08-26 20:57:45.8006 INFO Returned all meetings from database.
+2020-08-26 20:58:22.2518 INFO Returned all attendees from database.
+2020-08-26 20:58:22.2688 INFO Returned meeting with id: 13

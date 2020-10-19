@@ -1,21 +1,22 @@
 <div class="card m-3">
-  <h5 class="card-header">Add New Meeting</h5>
+  <h5 class="card-header">{{FormHeader}} Meeting : {{subject}}</h5>
   <div class="card-body">
     <form [formGroup]="meetingaddform" (ngSubmit)="submitForm()">
       <div class="form-row">
         <div class="form-group col">
           <label>Subject</label>
-          <input type="text" formControlName="subject" [value]="txtSubject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" />
+          <input type="hidden" formControlName="Id" [(ngModel)]="Id" /> 
+          <input type="text" formControlName="subject" [(ngModel)]="subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" />
           <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
             <div *ngIf="f.subject.errors.required">Subject is required</div>
           </div>
           <p></p>
           <label>Date of Meeting</label>
-          <input type="date" formControlName="dateOfMeeting" [value]="txtDOM" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfMeeting.errors }" />
+          <input type="date" formControlName="dateOfMeeting" [(ngModel)]="dateofmeeting" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfMeeting.errors }" />
           <div *ngIf="submitted && f.dateOfMeeting.errors" class="invalid-feedback">
             <div *ngIf="f.dateOfMeeting.errors.required">Date of meeting is required</div>
           </div>
-          
+
           <p></p>
           <label>Attendees:</label>
           <ng-multiselect-dropdown name="attendees"
@@ -23,7 +24,6 @@
                                    [data]="attendeeslist"
                                    formControlName="attendees"
                                    [settings]="dropdownSettings"
-                                   [(ngModel)]="selectedItems"
                                    [ngClass]="{ 'is-invalid': submitted && f.attendees.errors }">
           </ng-multiselect-dropdown>
           <div *ngIf="submitted && f.attendees.errors" class="invalid-feedback">
@@ -32,7 +32,7 @@
         </div>
         <div class="form-group col-6">
           <label>Agenda</label>
-          <textarea type="text" formControlName="agenda" [value]="txtAgenda" class="md-textarea md-textarea-auto form-control" rows="6" mdbInput [ngClass]="{ 'is-invalid': submitted && f.agenda.errors }" ></textarea>
+          <textarea type="text" formControlName="agenda" [(ngModel)]="agenda" class="md-textarea md-textarea-auto form-control" rows="6" mdbInput [ngClass]="{ 'is-invalid': submitted && f.agenda.errors }" ></textarea>
           <div *ngIf="submitted && f.agenda.errors" class="invalid-feedback">
             <div *ngIf="f.agenda.errors.required">Agenda is required</div>
           </div>
@@ -42,8 +42,9 @@
 
       <div class="text-left">
         <button type="submit" class="btn btn-primary  mr-5">Submit</button>
-        <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
-        </div>
+        <button class="btn btn-secondary mr-5" type="reset" (click)="onReset()">Reset</button>
+        <button class="btn btn-secondary" type="reset" [routerLink]="['/meetings']">Back</button>
+      </div>
     </form>
   </div>
   </div>
