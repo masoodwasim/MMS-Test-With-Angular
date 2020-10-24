@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>

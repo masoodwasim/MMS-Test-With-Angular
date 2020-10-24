@@ -31,7 +31,7 @@ namespace MMSTest.API.Controllers
             {
                 var meetings = await _repository.Meetings.GetAllMeetingsAsync();
                 _logger.LogInfo($"Returned all meetings from database.");
-
+                _logger.LogError($"Something went wrong inside GetAllMeetings action: {meetings}");
                 var meetingsResult = _mapper.Map<IEnumerable<MeetingsDto>>(meetings);
                 
                 return Ok(meetingsResult);
